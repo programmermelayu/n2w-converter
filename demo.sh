@@ -2,7 +2,7 @@
 
 # Function to make the HTTP request and display the response
 make_request() {
-    local base_url=localhost:3031
+    local base_url=localhost:3004
     local value=$1
     local allow_rounding=false
     local response=$(curl -s "http://$base_url/Converter/value?value=$value&allowRounding=$allow_rounding")

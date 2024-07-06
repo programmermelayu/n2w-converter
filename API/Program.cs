@@ -12,9 +12,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Enable swagger for testing, even for production!
-app.UseSwagger();
-app.UseSwaggerUI();
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 
