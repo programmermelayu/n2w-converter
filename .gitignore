@@ -1,0 +1,68 @@
+# .NET 8.0
+
+## Ignore build output directories
+bin/
+obj/
+publish/
+
+## Ignore NuGet Packages
+*.nupkg
+*.snupkg
+**/packages/
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
+
+## Ignore project lock files
+project.lock.json
+project.fragment.lock.json
+
+## Ignore Visual Studio temporary files, build results, and
+## build directories.
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Ignore temporary files
+*.tmp
+*.temp
+
+## Ignore log files
+*.log
+**/logs/
+
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# IIS Express
+/.vs/
+iisexpress/
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
