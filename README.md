@@ -2,6 +2,16 @@
 
 - [Number to Words Converter](#number-to-words-converter)
   - [Components Description](#components-description)
+  - [Let's Talk About Algorithm](#lets-talk-about-algorithm)
+    - [Step by Step How it Works](#step-by-step-how-it-works)
+      - [1. Understand the Problem](#1-understand-the-problem)
+      - [2. Break Down the Number into Smaller Components](#2-break-down-the-number-into-smaller-components)
+      - [3. Create Objects for Each Component](#3-create-objects-for-each-component)
+      - [4. Convert Each Component into Words](#4-convert-each-component-into-words)
+      - [5. Construct the Final Word Representation](#5-construct-the-final-word-representation)
+      - [6. Handle Special Cases](#6-handle-special-cases)
+      - [7. Implement the Algorithm](#7-implement-the-algorithm)
+      - [8. Test and Refine](#8-test-and-refine)
   - [How to Run the API](#how-to-run-the-api)
     - [Prerequisites](#prerequisites)
     - [Method 1: Using Public Docker Image](#method-1-using-public-docker-image)
@@ -27,6 +37,76 @@ N2W Converter is a simple .NET Web API that can convert dollar and cents in deci
 | **API**       | Web API project that contains endpoints that accept decimal values, convert them to words, and respond with the results. You can test this API using either `SwaggerUI` or the `demo.sh` script. |
 | **API.Tests** | Unit tests for the `Convert` function to ensure all scenarios are handled. While not guaranteed to be bug-free, it aims to be nearly so. |
 | **demo.sh**   | Interactive shell script to test the API. You can edit the base URL and port number here, and set `AllowRounding` to `True` or `False` (default is `False`). |
+
+---
+
+---
+
+## Let's Talk About Algorithm
+
+Algorithm used here might not be concise and sexier with brilliant mathematical formula you can find from internet or suggested by your favourite Generative AI. The thought pattern right here is to implement the solution as "everything objects". Having the decimal numbers, no matter how large it is, you can clearly see what matter most is the three properties, "the ones", "the tens" or "the teens" or "the hundreds". Hence I every decimal number can be divided into objects containing these 3 properties. How to extract it? Easy, just use string index manipulation to divide it into smaller object with these 3 properties and assign them with correct words. Finally loop the objects to construct one full words and you're done.
+
+
+### Step by Step How it Works
+
+The algorithm for converting a number to its word representation is based on breaking down a decimal number into its basic components and converting those components into words. Here's a step-by-step guide to the thought process and implementation:
+
+#### 1. Understand the Problem
+
+- **Goal:** Convert a decimal number into its word representation.
+- **Key Elements:** To convert numbers into words, focus on three main properties of a number:
+  - **Ones:** The single digits.
+  - **Tens:** The two-digit numbers.
+  - **Hundreds:** The three-digit numbers.
+
+#### 2. Break Down the Number into Smaller Components
+
+- **Concept:** Every decimal number can be divided into smaller parts based on "ones", "tens", and "hundreds."
+- **Approach:** Use string index manipulation to split the number into these parts.
+  - **String Manipulation:** Convert the number to a string and extract parts from it using indices.
+  - **Example:** For the number 123:
+    - **Ones:** 3
+    - **Tens:** 2
+    - **Hundreds:** 1
+
+#### 3. Create Objects for Each Component
+
+- **Concept:** Define objects or data structures to hold the components and their word representations.
+- **Implementation:** Create classes or structures to represent "ones," "tens," and "hundreds."
+  - **Example Objects:**
+    - **OneInWord:** Stores the word for the single digit (e.g., "three").
+    - **TenInWord:** Stores the word for the tens digit (e.g., "twenty").
+    - **HundredInWord:** Stores the word for the hundreds digit (e.g., "one hundred").
+
+#### 4. Convert Each Component into Words
+
+- **Concept:** Map each numeric component to its word equivalent.
+- **Implementation:** Use predefined arrays or dictionaries for number-to-word mapping.
+  - **Example:**
+    - **Ones Array:** `["zero", "one", "two", ... , "nine"]`
+    - **Tens Array:** `["", "", "twenty", "thirty", ... , "ninety"]`
+    - **Teens Array:** `["ten", "eleven", "twelve", ... , "nineteen"]`
+
+#### 5. Construct the Final Word Representation
+
+- **Concept:** Combine the words for "ones," "tens," and "hundreds" into a complete word representation of the number.
+- **Implementation:** Loop through the components and concatenate their word representations.
+  - **Example:** For 123, the final word would be "one hundred twenty-three."
+
+#### 6. Handle Special Cases
+
+- **Concept:** Address special cases such as numbers from 10 to 19 (teens) and ensure correct formatting.
+- **Implementation:** Check for these cases during the conversion and apply the correct word mappings.
+
+#### 7. Implement the Algorithm
+
+- **Concept:** Put all the steps into code.
+- **Implementation:** Write functions or methods that perform the above tasks.
+
+#### 8. Test and Refine
+
+- **Concept:** Test the implementation with various numbers to ensure correctness.
+- **Implementation:** Write test cases for different numbers and refine the algorithm as needed.
 
 ---
 
