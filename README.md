@@ -10,7 +10,7 @@ Ensure Docker is installed on your machine to proceed with either method.
 1. **Run the Docker Container**
 
     ```sh
-    docker run -p 3004:8080 -d --rm --name n2w-hub nasminzain/n2w-converter-api
+    docker run -p 3004:8080 -d --rm --name n2w-converter-api nasminzain/n2w-converter-api
     ```
 
 2. **Clone the Repository**

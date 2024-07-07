@@ -54,6 +54,7 @@ public class Converter : IConverter
         public string? OneInWord { get; set; }
         public string? TenInWord { get; set; }
         public string? HundredInWord { get; set; }
+        public string? DollarInWords { get; set; }
     }
     private class CentDivision
     {
@@ -66,7 +67,7 @@ public class Converter : IConverter
 
         if (!ValidateInput(value))
             throw new Exception("INVALID INPUT");
-        
+
         try
         {
             var dollarAndCent = value.ToString("F2").Split('.');
@@ -76,17 +77,11 @@ public class Converter : IConverter
             var allPairs = new List<KeyValuePair<int, DollarDivision>>();
 
             int charLength = 3;
-            for (int i = 0; i < Illions.Count; i++)
+            for (int i = 0; i < Illions.Count; i++, charLength += 3)
             {
-                var divName = Illions[i];
-                var div = GetDollarDivision(dollar, charLength, divName);
-                if (string.IsNullOrEmpty(div.OneInWord)
-                && string.IsNullOrEmpty(div.TenInWord)
-                && string.IsNullOrEmpty(div.OneInWord)) break;
-
-                var pair = new KeyValuePair<int, DollarDivision>(i, div);
-                allPairs.Add(pair);
-                charLength += 3;
+                var dollarDiv = GetDollarDivision(dollar, charLength, Illions[i]);
+                if (dollarDiv == null) break;
+                allPairs.Add(new KeyValuePair<int, DollarDivision>(i, dollarDiv));
             }
 
             var dollarInWords = GetDollarInWords(allPairs);
@@ -107,9 +102,7 @@ public class Converter : IConverter
     }
     private bool ValidateInput(decimal value)
     {
-        if (!allowRounding && HasMoreThanTwoDecimalPlaces(value)) return false;
-        if (value < 0) return false; // do not allow negative number
-        return true;
+        return !(value < 0 || (!allowRounding && HasMoreThanTwoDecimalPlaces(value)));
     }
     private static bool HasMoreThanTwoDecimalPlaces(decimal value)
     {
@@ -120,7 +113,7 @@ public class Converter : IConverter
     {
         if (SkipOnZeroCent(centDiv))
             return dollarInWords.Trim();
-        
+
         string dollarAndCentInWords = string.IsNullOrEmpty(dollarInWords) ? "" : $"{dollarInWords} and ";
         dollarAndCentInWords += GetCentInWords(centDiv);
 
@@ -143,136 +136,87 @@ public class Converter : IConverter
     }
     private static string GetDollarInWords(List<KeyValuePair<int, DollarDivision>> allPairs)
     {
-        var dollarString = "";
+        var dollarString = new StringBuilder();
+
         for (int i = allPairs.Count - 1; i >= 0; i--)
         {
             var storedDiv = allPairs[i].Value;
 
-            if (allPairs[i].Value != null)
+            if (storedDiv != null)
             {
                 if (!string.IsNullOrEmpty(storedDiv.HundredInWord) && storedDiv.HundredInWord != "zero")
                 {
-                    dollarString = $"{dollarString} {storedDiv.HundredInWord} hundred";
+                    dollarString.Append($" {storedDiv.HundredInWord} hundred");
                 }
                 if (!string.IsNullOrEmpty(storedDiv.TenInWord) && storedDiv.TenInWord != "zero")
                 {
-                    dollarString = $"{dollarString} {storedDiv.TenInWord}";
+                    dollarString.Append($" {storedDiv.TenInWord}");
                 }
                 if (!string.IsNullOrEmpty(storedDiv.OneInWord) && storedDiv.OneInWord != "zero")
                 {
                     var teenVal = Teens.FirstOrDefault(x => x.Value == storedDiv.TenInWord);
-                    if (!string.IsNullOrEmpty(storedDiv.TenInWord) && (storedDiv.TenInWord != "zero") &&
-                    teenVal.Equals(default(KeyValuePair<int, string>)))
-                    {
-                        dollarString = $"{dollarString}-{storedDiv.OneInWord}";
-                    }
-                    else
-                    {
-                        dollarString = $"{dollarString} {storedDiv.OneInWord}";
-                    }
+                    dollarString.Append(!string.IsNullOrEmpty(storedDiv.TenInWord) && storedDiv.TenInWord != "zero" && teenVal.Equals(default(KeyValuePair<int, string>))
+                        ? $"-{storedDiv.OneInWord}"
+                        : $" {storedDiv.OneInWord}");
                 }
-                if (!string.IsNullOrEmpty(storedDiv.IllionName))
+                if (!string.IsNullOrEmpty(storedDiv.IllionName) && !SkipOnZeroDollar(storedDiv))
                 {
-                    if (!SkipOnZeroDollar(storedDiv))
-                    {
-                        dollarString = $"{dollarString} {storedDiv.IllionName}";
-                    }
-
+                    dollarString.Append($" {storedDiv.IllionName}");
                 }
             }
         }
-        return dollarString.Trim();
-    }
-    private static bool SkipOnZeroDollar(DollarDivision div)
-    {
-        return (string.IsNullOrEmpty(div.HundredInWord) || div.HundredInWord == "zero") &&
-        (string.IsNullOrEmpty(div.TenInWord) || div.TenInWord == "zero") &&
-        (string.IsNullOrEmpty(div.OneInWord) || div.OneInWord == "zero");
-    }
-    private static bool SkipOnZeroCent(CentDivision div)
-    {
-        return ((string.IsNullOrEmpty(div.TenInWord) || div.TenInWord == "zero") &&
-        (string.IsNullOrEmpty(div.OneInWord) || div.OneInWord == "zero"));
-    }
-    private static CentDivision GetCentDivision(string partitionValue)
-    {
-        var centPartition = new CentDivision();
 
-        int oneIdx = -1;
-        var one = "";
-        if ((partitionValue.Length - 1) >= 0)
-        {
-            oneIdx = int.Parse(partitionValue[partitionValue.Length - (1)].ToString());
-            one = Ones[oneIdx];
-            centPartition.OneInWord = one;
-        }
+        return dollarString.ToString().Trim();
+    }
+    private static bool SkipOnZeroDollar(DollarDivision div) =>
+    div == null ||
+    (string.IsNullOrEmpty(div.HundredInWord) || div.HundredInWord == "zero") &&
+    (string.IsNullOrEmpty(div.TenInWord) || div.TenInWord == "zero") &&
+    (string.IsNullOrEmpty(div.OneInWord) || div.OneInWord == "zero");
+    private static bool SkipOnZeroCent(CentDivision div) =>
+    div == null ||
+    ((string.IsNullOrEmpty(div.TenInWord) || div.TenInWord == "zero") &&
+    (string.IsNullOrEmpty(div.OneInWord) || div.OneInWord == "zero"));
+    private static CentDivision GetCentDivision(string divValue)
+    {
+        var centDiv = new CentDivision();
 
-        int tenIdx = -1;
-        var ten = "";
-        if (partitionValue.Length - (2) >= 0)
-            tenIdx = int.Parse(partitionValue[partitionValue.Length - 2].ToString());
-        if (tenIdx > 1)
-        {
-            ten = Tens[tenIdx];
-            centPartition.TenInWord = ten;
-            centPartition.OneInWord = one;
-        }
+        int GetIndex(int pos) => divValue.Length - pos >= 0 ? int.Parse(divValue[divValue.Length - pos].ToString()) : -1;
+
+        int oneIdx = GetIndex(1);
+        int tenIdx = GetIndex(2);
+
+        if (oneIdx >= 0) centDiv.OneInWord = Ones[oneIdx];
+        if (tenIdx > 1) centDiv.TenInWord = Tens[tenIdx];
+        else if (tenIdx == 1) centDiv.TenInWord = Teens.FirstOrDefault(x => x.Key == 10 + oneIdx).Value;
+
+        if (tenIdx == 1) centDiv.OneInWord = string.Empty;
+
+        return centDiv;
+    }
+    private static DollarDivision? GetDollarDivision(string divValue, int k, string illionName)
+    {
+        var dollarDiv = new DollarDivision { IllionName = illionName };
+
+        int GetIndex(int pos) => divValue.Length - pos >= 0 ? int.Parse(divValue[divValue.Length - pos].ToString()) : -1;
+
+        int oneIdx = GetIndex(k - 2);
+        int tenIdx = GetIndex(k - 1);
+        int hundredIdx = GetIndex(k);
+
+        if (oneIdx >= 0) dollarDiv.OneInWord = Ones[oneIdx];
+        if (tenIdx > 1) dollarDiv.TenInWord = Tens[tenIdx];
         else if (tenIdx == 1)
         {
-            var key = 10 + oneIdx;
-            centPartition.TenInWord = Teens.FirstOrDefault(x => x.Key == key).Value;
-            centPartition.OneInWord = "";
+            var teen = Teens.FirstOrDefault(x => x.Key == 10 + oneIdx);
+            dollarDiv.TenInWord = teen.Value;
+            dollarDiv.OneInWord = string.Empty; //override any existing value here coz teen value is enough
         }
+        if (hundredIdx >= 0) dollarDiv.HundredInWord = Ones[hundredIdx];
 
-        return centPartition;
+        dollarDiv.DollarInWords = $"{dollarDiv.HundredInWord}{dollarDiv.TenInWord}{dollarDiv.OneInWord}".Trim();
+
+        return string.IsNullOrEmpty(dollarDiv.DollarInWords) ? null : dollarDiv;
     }
-    private static DollarDivision GetDollarDivision(string divValue, int k, string partitionName)
-    {
-        // var thousands = Thousands.ToList();
-        // var oneNumbers = Ones.ToList();
-        // var tensNumbers = Tens.ToList();
-        // var teenPairs = Teens.ToList();
 
-        var dollarDiv = new DollarDivision();
-
-        int oneIdx = -1;
-        var one = "";
-        if (divValue.Length - (k - 2) >= 0)
-        {
-            oneIdx = int.Parse(divValue[divValue.Length - (k - 2)].ToString());
-            one = Ones[oneIdx];
-            dollarDiv.OneInWord = one;
-        }
-
-        int tenIdx = -1;
-        var ten = "";
-        if (divValue.Length - (k - 1) >= 0)
-            tenIdx = int.Parse(divValue[divValue.Length - (k - 1)].ToString());
-        if (tenIdx > 1)
-        {
-            ten = Tens[tenIdx];
-            dollarDiv.TenInWord = ten;
-            dollarDiv.OneInWord = one;
-        }
-        else if (tenIdx == 1)
-        {
-            var key = 10 + oneIdx;
-            dollarDiv.TenInWord = Teens.FirstOrDefault(x => x.Key == key).Value;
-            dollarDiv.OneInWord = "";
-        }
-
-        int hundredIdx = -1;
-        var hundred = "";
-        if ((divValue.Length - k) >= 0)
-        {
-            hundredIdx = int.Parse(divValue[divValue.Length - (k)].ToString());
-            hundred = Ones[hundredIdx];
-        }
-
-        dollarDiv.IllionName = partitionName;
-        dollarDiv.HundredInWord = hundred;
-
-        return dollarDiv;
-
-    }
 }
