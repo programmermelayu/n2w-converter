@@ -47,8 +47,8 @@ Imagine you’re a digital wizard trying to turn boring old numbers into magical
 
 Here’s the secret sauce:
 
-1. **Identify the Stars:** Every number has three main roles: **Ones**, **Tens**, and **Hundreds**. Think of them as the Three Amigos of number-to-word conversion.
-   - **Ones** are the little guys (1, 2, 3, etc.).
+1. **Identify the Stars:** Every decimal number can be splitted into 2 groups. First group, the "dollar" that can contain infinitely large number and second group, the "cent" which could not exceed 2 digits. For dollar part, it consist of three main elements: **Ones**, **Tens**, and **Hundreds** while the cent only contains **Ones** and **Tens**. Those elements can be viewed as below:
+   - **Ones** the smallest member (1, 2, 3, etc.).
    - **Tens** are the two-digit pals (20, 30, 40, etc.).
    - **Hundreds** are the big shots (100, 200, 300, etc.).
 
