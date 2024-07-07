@@ -382,4 +382,4 @@ So, while my algorithm might not win any awards for elegance, it sure gets the j
     dotnet test --logger "trx;LogFileName=test_results.trx"
     ```
 ---
-By following these instructions, you can set up and run the Number to Words Converter API quickly and efficiently. If you encounter any issues, please check the Docker and GitHub documentation for further assistance.
+By following these instructions, you can set up and run the Number to Words Converter API quickly and efficiently. If you encounter any issues, please email me at nasminzain@gmail.com or programmermelayu@gmail.com whichever you prefer!
