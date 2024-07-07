@@ -3,15 +3,9 @@
 - [Number to Words Converter](#number-to-words-converter)
   - [Components Description](#components-description)
   - [Let's Talk About Algorithm](#lets-talk-about-algorithm)
-    - [Step by Step How it Works](#step-by-step-how-it-works)
-      - [1. Understand the Problem](#1-understand-the-problem)
-      - [2. Break Down the Number into Smaller Components](#2-break-down-the-number-into-smaller-components)
-      - [3. Create Objects for Each Component](#3-create-objects-for-each-component)
-      - [4. Convert Each Component into Words](#4-convert-each-component-into-words)
-      - [5. Construct the Final Word Representation](#5-construct-the-final-word-representation)
-      - [6. Handle Special Cases](#6-handle-special-cases)
-      - [7. Implement the Algorithm](#7-implement-the-algorithm)
-      - [8. Test and Refine](#8-test-and-refine)
+    - [Think of the Algorithm as a Digital Wizard 🧙‍♂️](#think-of-the-algorithm-as-a-digital-wizard-️)
+    - [Breaking Down the Number 🧩](#breaking-down-the-number-)
+    - [The Summary in a Nutshell](#the-summary-in-a-nutshell)
   - [How to Run the API](#how-to-run-the-api)
     - [Prerequisites](#prerequisites)
     - [Method 1: Using Public Docker Image](#method-1-using-public-docker-image)
@@ -40,75 +34,55 @@ N2W Converter is a simple .NET Web API that can convert dollar and cents in deci
 
 ---
 
----
 
 ## Let's Talk About Algorithm
 
-Algorithm used here might not be concise and sexier with brilliant mathematical formula you can find from internet or suggested by your favourite Generative AI. The thought pattern right here is to implement the solution as "everything objects". Having the decimal numbers, no matter how large it is, you can clearly see what matter most is the three properties, "the ones", "the tens" or "the teens" or "the hundreds". Hence I every decimal number can be divided into objects containing these 3 properties. How to extract it? Easy, just use string index manipulation to divide it into smaller object with these 3 properties and assign them with correct words. Finally loop the objects to construct one full words and you're done.
+So, here’s the scoop on the algorithm we’re using. It might not be the fanciest or most mind-blowing formula you’ll ever find online (like those that promise to solve world hunger with just a few lines of code), but it’s pretty darn clever in its own right!
 
+### Think of the Algorithm as a Digital Wizard 🧙‍♂️
 
-### Step by Step How it Works
+Imagine you’re a digital wizard trying to turn boring old numbers into magical words. 🧙‍♂️✨ Instead of summoning mystical incantations, we’re using a bit of number-crunching logic that’s more like organizing your sock drawer!
 
-The algorithm for converting a number to its word representation is based on breaking down a decimal number into its basic components and converting those components into words. Here's a step-by-step guide to the thought process and implementation:
+### Breaking Down the Number 🧩
 
-#### 1. Understand the Problem
+Here’s the secret sauce:
 
-- **Goal:** Convert a decimal number into its word representation.
-- **Key Elements:** To convert numbers into words, focus on three main properties of a number:
-  - **Ones:** The single digits.
-  - **Tens:** The two-digit numbers.
-  - **Hundreds:** The three-digit numbers.
+1. **Identify the Stars:** Every number has three main roles: **Ones**, **Tens**, and **Hundreds**. Think of them as the Three Amigos of number-to-word conversion.
+   - **Ones** are the little guys (1, 2, 3, etc.).
+   - **Tens** are the two-digit pals (20, 30, 40, etc.).
+   - **Hundreds** are the big shots (100, 200, 300, etc.).
 
-#### 2. Break Down the Number into Smaller Components
+2. **Divide and Conquer:** Just like slicing a pizza into slices, we split the number into these three parts using some string magic.
+   - **String Indexing:** A fancy term for picking out parts of a number like a kid picking out their favorite candy. 🍭
 
-- **Concept:** Every decimal number can be divided into smaller parts based on "ones", "tens", and "hundreds."
-- **Approach:** Use string index manipulation to split the number into these parts.
-  - **String Manipulation:** Convert the number to a string and extract parts from it using indices.
-  - **Example:** For the number 123:
-    - **Ones:** 3
-    - **Tens:** 2
-    - **Hundreds:** 1
+3. **Create Word Objects:** We then turn these parts into words using a bit of digital craftiness.
+   - **Ones → "Three", "Seven"**
+   - **Tens → "Twenty", "Fifty"**
+   - **Hundreds → "One Hundred", "Two Hundred"**
+   - **Illions → "Thousands", "Millions", "Billions", "Trillions", "Quadrillions", ...** 
+  
+     *Firstly "Illions" is new word I introduce here, you're not gonna find elsewhere and secondly, I purposely make it exceed trillions because, let’s be honest, ₿ value might keep going up forever, right! 🚀💰*
+     
+4. **Combine Words:** Next, we piece everything together into one beautiful, wordy masterpiece. Just like making a sandwich from the ingredients you have.
 
-#### 3. Create Objects for Each Component
+5. **Handle Special Cases:** Every good recipe has its quirks, like “teens” (10-19) which are their own special club. 🎉
 
-- **Concept:** Define objects or data structures to hold the components and their word representations.
-- **Implementation:** Create classes or structures to represent "ones," "tens," and "hundreds."
-  - **Example Objects:**
-    - **OneInWord:** Stores the word for the single digit (e.g., "three").
-    - **TenInWord:** Stores the word for the tens digit (e.g., "twenty").
-    - **HundredInWord:** Stores the word for the hundreds digit (e.g., "one hundred").
+6. **Code It Up:** Finally, we code all this into a neat algorithm that takes a number and turns it into words!
 
-#### 4. Convert Each Component into Words
+### The Summary in a Nutshell
 
-- **Concept:** Map each numeric component to its word equivalent.
-- **Implementation:** Use predefined arrays or dictionaries for number-to-word mapping.
-  - **Example:**
-    - **Ones Array:** `["zero", "one", "two", ... , "nine"]`
-    - **Tens Array:** `["", "", "twenty", "thirty", ... , "ninety"]`
-    - **Teens Array:** `["ten", "eleven", "twelve", ... , "nineteen"]`
+| **Step**                   | **What’s Happening?**                                                                                                  |
+|:--------------------------|:---------------------------------------------------------------------------------------------------------------------|
+| **Be a Number Wizard**   | Converting numbers to words might not involve spells, but it does involve breaking things down and putting them back together! |
+| **Find the Stars**       | Break down numbers into **Ones**, **Tens**, and **Hundreds** like sorting your LEGO pieces.                          |
+| **Slice the Number**     | Use string manipulation like a digital chef to divide the number into components.                                    |
+| **Create Word Objects**  | Convert those components into words, sort of like translating numbers into the language of the fairy tales.          |
+| **Make a Word Sandwich**  | Combine those words to form the final, magical word representation of the number.                                     |
+| **Handle Special Guests** | Deal with those tricky “teen” numbers like a pro party host.                                                           |
+| **Write the Code**       | Turn this fun process into code that does the magic for you!                                                            |
 
-#### 5. Construct the Final Word Representation
+So, while our algorithm might not win any awards for elegance, it sure gets the job done in a fun and practical way. 🏆🎉
 
-- **Concept:** Combine the words for "ones," "tens," and "hundreds" into a complete word representation of the number.
-- **Implementation:** Loop through the components and concatenate their word representations.
-  - **Example:** For 123, the final word would be "one hundred twenty-three."
-
-#### 6. Handle Special Cases
-
-- **Concept:** Address special cases such as numbers from 10 to 19 (teens) and ensure correct formatting.
-- **Implementation:** Check for these cases during the conversion and apply the correct word mappings.
-
-#### 7. Implement the Algorithm
-
-- **Concept:** Put all the steps into code.
-- **Implementation:** Write functions or methods that perform the above tasks.
-
-#### 8. Test and Refine
-
-- **Concept:** Test the implementation with various numbers to ensure correctness.
-- **Implementation:** Write test cases for different numbers and refine the algorithm as needed.
-
----
 
 ## How to Run the API
 
