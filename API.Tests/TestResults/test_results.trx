@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="49c4fbd6-03d9-413e-a9d5-fcde7142d250" name="@cardanian5141 2024-07-07 13:01:25" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-07-07T13:01:25.9432010+08:00" queuing="2024-07-07T13:01:25.9432010+08:00" start="2024-07-07T13:01:24.8650240+08:00" finish="2024-07-07T13:01:25.9754090+08:00" />
+  <TestSettings name="default" id="fa4938f5-3ef7-4276-af19-0166b39d06cd">
+    <Deployment runDeploymentRoot="_cardanian5141_2024-07-07_13_01_25" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="50a86e01-7267-4e21-90ec-2852909112f1" testId="b41173eb-556f-5663-5de8-b95efe4546aa" testName="API.Tests.ConverterTests.Convert_NinetyTrillionPlus_ShouldReturnExpectedResult" computerName="cardanian5141" duration="00:00:00.0001970" startTime="2024-07-07T13:01:25.8675370+08:00" endTime="2024-07-07T13:01:25.8675370+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50a86e01-7267-4e21-90ec-2852909112f1" />
+    <UnitTestResult executionId="f26eb169-1a7a-4ecf-9aac-d4404f44433d" testId="fb6e20c6-2937-1d14-02ba-d46c682cdfb2" testName="API.Tests.ConverterTests.Convert_ThreeDecimalPlaces_ShouldReturnInvalidInput" computerName="cardanian5141" duration="00:00:00.0010865" startTime="2024-07-07T13:01:25.9016610+08:00" endTime="2024-07-07T13:01:25.9016610+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f26eb169-1a7a-4ecf-9aac-d4404f44433d" />
+    <UnitTestResult executionId="eff31dca-fd0f-49aa-b650-89a6aa663ba8" testId="15d3cc77-69e0-ec9c-d968-93e4caaf44c5" testName="API.Tests.ConverterTests.Convert_OneThousandPlus_ShouldReturnExpectedResult" computerName="cardanian5141" duration="00:00:00.0001546" startTime="2024-07-07T13:01:25.9022940+08:00" endTime="2024-07-07T13:01:25.9022940+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eff31dca-fd0f-49aa-b650-89a6aa663ba8" />
+    <UnitTestResult executionId="2a2b0dcf-ac9b-4174-88f1-97b76c9d70a9" testId="8526c94d-17e3-9438-b139-f4cde0f9aa47" testName="API.Tests.ConverterTests.Convert_NineHundredTrillionNine_ShouldReturnExpectedResult" computerName="cardanian5141" duration="00:00:00.0001067" startTime="2024-07-07T13:01:25.8673540+08:00" endTime="2024-07-07T13:01:25.8673550+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a2b0dcf-ac9b-4174-88f1-97b76c9d70a9" />
+    <UnitTestResult executionId="2c561a17-03bd-4ea8-abb2-21dead3d0e28" testId="852ed6c2-d935-efa0-3e05-98fe41162067" testName="API.Tests.ConverterTests.Convert_PointOneFive_ShouldReturnFifteenCents" computerName="cardanian5141" duration="00:00:00.0001647" startTime="2024-07-07T13:01:25.8673990+08:00" endTime="2024-07-07T13:01:25.8673990+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2c561a17-03bd-4ea8-abb2-21dead3d0e28" />
+    <UnitTestResult executionId="620d690f-9323-4f24-86be-0d6b5a743e8d" testId="d5fb6c02-4433-9fef-d9b1-a92bbc33cc5f" testName="API.Tests.ConverterTests.Convert_OnePointZeroOne_ShouldReturnOneDollarOneCent" computerName="cardanian5141" duration="00:00:00.0144705" startTime="2024-07-07T13:01:25.8623810+08:00" endTime="2024-07-07T13:01:25.8624170+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="620d690f-9323-4f24-86be-0d6b5a743e8d" />
+    <UnitTestResult executionId="b5350946-0821-486b-93a6-c4144aeed700" testId="9ed5c7de-b00f-6d91-7ec6-52bda61ab751" testName="API.Tests.ConverterTests.Convert_PointOne_ShouldReturnTenCents" computerName="cardanian5141" duration="00:00:00.0001196" startTime="2024-07-07T13:01:25.9022460+08:00" endTime="2024-07-07T13:01:25.9022460+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b5350946-0821-486b-93a6-c4144aeed700" />
+    <UnitTestResult executionId="4ba73495-91a7-4230-8642-f8a7c8f7d00c" testId="b3f5bd6f-ca49-3a90-0612-3409248253d4" testName="API.Tests.ConverterTests.Convert_NineHundredTrillionPlus_ShouldReturnExpectedResult" computerName="cardanian5141" duration="00:00:00.0004321" startTime="2024-07-07T13:01:25.8672220+08:00" endTime="2024-07-07T13:01:25.8672220+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4ba73495-91a7-4230-8642-f8a7c8f7d00c" />
+    <UnitTestResult executionId="fc675eee-a350-4f8c-bf7b-fc310a5ac545" testId="889463b6-ac73-3bbe-5227-3b8cc40dd28c" testName="API.Tests.ConverterTests.Convert_PointZeroOne_ShouldReturnOneCent" computerName="cardanian5141" duration="00:00:00.0001000" startTime="2024-07-07T13:01:25.8671660+08:00" endTime="2024-07-07T13:01:25.8671660+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fc675eee-a350-4f8c-bf7b-fc310a5ac545" />
+    <UnitTestResult executionId="c9ad86ce-7383-453d-9507-5ef7f5b8e6d6" testId="bfb0316c-082e-c738-21e0-0a33881bf9b1" testName="API.Tests.ConverterTests.Convert_NegativeValue_ShouldReturnInvalidInput" computerName="cardanian5141" duration="00:00:00.0003373" startTime="2024-07-07T13:01:25.9020300+08:00" endTime="2024-07-07T13:01:25.9020300+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c9ad86ce-7383-453d-9507-5ef7f5b8e6d6" />
+    <UnitTestResult executionId="a00a01f2-db52-41b1-af37-b6ff96ff4b99" testId="ae707d9b-56fa-cad7-5f05-04a778ff7893" testName="API.Tests.ConverterTests.Convert_OneMillionPlus_ShouldReturnExpectedResult" computerName="cardanian5141" duration="00:00:00.0001938" startTime="2024-07-07T13:01:25.8673070+08:00" endTime="2024-07-07T13:01:25.8673070+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a00a01f2-db52-41b1-af37-b6ff96ff4b99" />
+    <UnitTestResult executionId="10aa4f26-37a0-4bf8-94c6-86b49e68e102" testId="3e5260b2-4364-128a-8da5-3cf9e759fc63" testName="API.Tests.ConverterTests.Convert_OnePointNinetyNine_ShouldReturnExpectedResult" computerName="cardanian5141" duration="00:00:00.0001196" startTime="2024-07-07T13:01:25.9021750+08:00" endTime="2024-07-07T13:01:25.9021750+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10aa4f26-37a0-4bf8-94c6-86b49e68e102" />
+    <UnitTestResult executionId="5116fb73-ec8d-4692-b4f3-65cc8da6b951" testId="b0e2815f-60e3-5f13-bdee-fa19b13db1af" testName="API.Tests.ConverterTests.Convert_ThreeDecimalPlacesWithAllowRounding_ShouldReturnExpectedResult" computerName="cardanian5141" duration="00:00:00.0001216" startTime="2024-07-07T13:01:25.9021130+08:00" endTime="2024-07-07T13:01:25.9021130+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5116fb73-ec8d-4692-b4f3-65cc8da6b951" />
+    <UnitTestResult executionId="209b6afe-c660-47d2-a4c4-24e8c3ce33a5" testId="b8f2d1db-4a09-cb4d-e6fd-bc9aeacdbdcb" testName="API.Tests.ConverterTests.Convert_PointNinetyNine_ShouldReturnNinetyNineCents" computerName="cardanian5141" duration="00:00:00.0007932" startTime="2024-07-07T13:01:25.8668010+08:00" endTime="2024-07-07T13:01:25.8668010+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="209b6afe-c660-47d2-a4c4-24e8c3ce33a5" />
+    <UnitTestResult executionId="77feec19-472a-4590-820a-40a6cf7ef3af" testId="6f9b3148-b843-2c29-0e10-d57962ebb0ac" testName="API.Tests.ConverterTests.Convert_One_ShouldReturnOneDollar" computerName="cardanian5141" duration="00:00:00.0001345" startTime="2024-07-07T13:01:25.8674870+08:00" endTime="2024-07-07T13:01:25.8674870+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="77feec19-472a-4590-820a-40a6cf7ef3af" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="API.Tests.ConverterTests.Convert_One_ShouldReturnOneDollar" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="6f9b3148-b843-2c29-0e10-d57962ebb0ac">
+      <Execution id="77feec19-472a-4590-820a-40a6cf7ef3af" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_One_ShouldReturnOneDollar" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_NegativeValue_ShouldReturnInvalidInput" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="bfb0316c-082e-c738-21e0-0a33881bf9b1">
+      <Execution id="c9ad86ce-7383-453d-9507-5ef7f5b8e6d6" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_NegativeValue_ShouldReturnInvalidInput" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_NineHundredTrillionNine_ShouldReturnExpectedResult" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="8526c94d-17e3-9438-b139-f4cde0f9aa47">
+      <Execution id="2a2b0dcf-ac9b-4174-88f1-97b76c9d70a9" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_NineHundredTrillionNine_ShouldReturnExpectedResult" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_PointNinetyNine_ShouldReturnNinetyNineCents" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="b8f2d1db-4a09-cb4d-e6fd-bc9aeacdbdcb">
+      <Execution id="209b6afe-c660-47d2-a4c4-24e8c3ce33a5" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_PointNinetyNine_ShouldReturnNinetyNineCents" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_ThreeDecimalPlaces_ShouldReturnInvalidInput" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="fb6e20c6-2937-1d14-02ba-d46c682cdfb2">
+      <Execution id="f26eb169-1a7a-4ecf-9aac-d4404f44433d" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_ThreeDecimalPlaces_ShouldReturnInvalidInput" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_PointOne_ShouldReturnTenCents" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="9ed5c7de-b00f-6d91-7ec6-52bda61ab751">
+      <Execution id="b5350946-0821-486b-93a6-c4144aeed700" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_PointOne_ShouldReturnTenCents" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_OneMillionPlus_ShouldReturnExpectedResult" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="ae707d9b-56fa-cad7-5f05-04a778ff7893">
+      <Execution id="a00a01f2-db52-41b1-af37-b6ff96ff4b99" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_OneMillionPlus_ShouldReturnExpectedResult" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_OnePointZeroOne_ShouldReturnOneDollarOneCent" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="d5fb6c02-4433-9fef-d9b1-a92bbc33cc5f">
+      <Execution id="620d690f-9323-4f24-86be-0d6b5a743e8d" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_OnePointZeroOne_ShouldReturnOneDollarOneCent" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_OnePointNinetyNine_ShouldReturnExpectedResult" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="3e5260b2-4364-128a-8da5-3cf9e759fc63">
+      <Execution id="10aa4f26-37a0-4bf8-94c6-86b49e68e102" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_OnePointNinetyNine_ShouldReturnExpectedResult" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_PointOneFive_ShouldReturnFifteenCents" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="852ed6c2-d935-efa0-3e05-98fe41162067">
+      <Execution id="2c561a17-03bd-4ea8-abb2-21dead3d0e28" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_PointOneFive_ShouldReturnFifteenCents" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_ThreeDecimalPlacesWithAllowRounding_ShouldReturnExpectedResult" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="b0e2815f-60e3-5f13-bdee-fa19b13db1af">
+      <Execution id="5116fb73-ec8d-4692-b4f3-65cc8da6b951" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_ThreeDecimalPlacesWithAllowRounding_ShouldReturnExpectedResult" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_OneThousandPlus_ShouldReturnExpectedResult" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="15d3cc77-69e0-ec9c-d968-93e4caaf44c5">
+      <Execution id="eff31dca-fd0f-49aa-b650-89a6aa663ba8" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_OneThousandPlus_ShouldReturnExpectedResult" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_PointZeroOne_ShouldReturnOneCent" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="889463b6-ac73-3bbe-5227-3b8cc40dd28c">
+      <Execution id="fc675eee-a350-4f8c-bf7b-fc310a5ac545" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_PointZeroOne_ShouldReturnOneCent" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_NinetyTrillionPlus_ShouldReturnExpectedResult" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="b41173eb-556f-5663-5de8-b95efe4546aa">
+      <Execution id="50a86e01-7267-4e21-90ec-2852909112f1" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_NinetyTrillionPlus_ShouldReturnExpectedResult" />
+    </UnitTest>
+    <UnitTest name="API.Tests.ConverterTests.Convert_NineHundredTrillionPlus_ShouldReturnExpectedResult" storage="/users/nasrul/documents/projects/dotnet/n2w-converter/api.tests/bin/debug/net8.0/api.tests.dll" id="b3f5bd6f-ca49-3a90-0612-3409248253d4">
+      <Execution id="4ba73495-91a7-4230-8642-f8a7c8f7d00c" />
+      <TestMethod codeBase="/Users/nasrul/Documents/projects/dotnet/n2w-converter/API.Tests/bin/Debug/net8.0/API.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="API.Tests.ConverterTests" name="Convert_NineHundredTrillionPlus_ShouldReturnExpectedResult" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b41173eb-556f-5663-5de8-b95efe4546aa" executionId="50a86e01-7267-4e21-90ec-2852909112f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb6e20c6-2937-1d14-02ba-d46c682cdfb2" executionId="f26eb169-1a7a-4ecf-9aac-d4404f44433d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15d3cc77-69e0-ec9c-d968-93e4caaf44c5" executionId="eff31dca-fd0f-49aa-b650-89a6aa663ba8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8526c94d-17e3-9438-b139-f4cde0f9aa47" executionId="2a2b0dcf-ac9b-4174-88f1-97b76c9d70a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="852ed6c2-d935-efa0-3e05-98fe41162067" executionId="2c561a17-03bd-4ea8-abb2-21dead3d0e28" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5fb6c02-4433-9fef-d9b1-a92bbc33cc5f" executionId="620d690f-9323-4f24-86be-0d6b5a743e8d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9ed5c7de-b00f-6d91-7ec6-52bda61ab751" executionId="b5350946-0821-486b-93a6-c4144aeed700" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b3f5bd6f-ca49-3a90-0612-3409248253d4" executionId="4ba73495-91a7-4230-8642-f8a7c8f7d00c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="889463b6-ac73-3bbe-5227-3b8cc40dd28c" executionId="fc675eee-a350-4f8c-bf7b-fc310a5ac545" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bfb0316c-082e-c738-21e0-0a33881bf9b1" executionId="c9ad86ce-7383-453d-9507-5ef7f5b8e6d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ae707d9b-56fa-cad7-5f05-04a778ff7893" executionId="a00a01f2-db52-41b1-af37-b6ff96ff4b99" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3e5260b2-4364-128a-8da5-3cf9e759fc63" executionId="10aa4f26-37a0-4bf8-94c6-86b49e68e102" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b0e2815f-60e3-5f13-bdee-fa19b13db1af" executionId="5116fb73-ec8d-4692-b4f3-65cc8da6b951" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8f2d1db-4a09-cb4d-e6fd-bc9aeacdbdcb" executionId="209b6afe-c660-47d2-a4c4-24e8c3ce33a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6f9b3148-b843-2c29-0e10-d57962ebb0ac" executionId="77feec19-472a-4590-820a-40a6cf7ef3af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="15" executed="15" passed="15" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.1+ce9211e970 (64-bit .NET 8.0.6)
+[xUnit.net 00:00:00.09]   Discovering: API.Tests
+[xUnit.net 00:00:00.13]   Discovered:  API.Tests
+[xUnit.net 00:00:00.13]   Starting:    API.Tests
+[xUnit.net 00:00:00.24]   Finished:    API.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

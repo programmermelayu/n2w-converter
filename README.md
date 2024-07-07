@@ -1,6 +1,7 @@
 # Number to Words Converter
 
 - [Number to Words Converter](#number-to-words-converter)
+  - [Components Description](#components-description)
   - [How to Run the API](#how-to-run-the-api)
     - [Prerequisites](#prerequisites)
     - [Method 1: Using Public Docker Image](#method-1-using-public-docker-image)
@@ -14,6 +15,18 @@
     - [Prerequisites](#prerequisites-2)
     - [Steps to Run Unit Tests](#steps-to-run-unit-tests)
       - [Steps Summary](#steps-summary-3)
+
+---
+
+## Components Description
+
+N2W Converter is a simple .NET Web API that can convert dollar and cents in decimal values into words. There are 3 main impotant components in this project:
+
+| **Component** | **Description** |
+|:-------------|:----------------|
+| **API**       | Web API project that contains endpoints that accept decimal values, convert them to words, and respond with the results. You can test this API using either `SwaggerUI` or the `demo.sh` script. |
+| **API.Tests** | Unit tests for the `Convert` function to ensure all scenarios are handled. While not guaranteed to be bug-free, it aims to be nearly so. |
+| **demo.sh**   | Interactive shell script to test the API. You can edit the base URL and port number here, and set `AllowRounding` to `True` or `False` (default is `False`). |
 
 ---
 
