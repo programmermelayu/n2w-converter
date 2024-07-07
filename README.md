@@ -52,10 +52,10 @@ Here’s the secret sauce:
    - **Tens** are the two-digit pals (20, 30, 40, etc.).
    - **Hundreds** are the big shots (100, 200, 300, etc.).
 
-2. **Divide and Conquer:** Just like slicing a pizza into slices, we split the number into these three parts using some string magic.
+2. **Divide and Conquer:** Just like slicing a pizza into slices, I split the number into these three parts using some string magic.
    - **String Indexing:** A fancy term for picking out parts of a number like a kid picking out their favorite candy. 🍭
 
-3. **Create Word Objects:** We then turn these parts into words using a bit of digital craftiness.
+3. **Create Word Objects:** I then turn these parts into words using a bit of digital craftiness.
    - **Ones → "Three", "Seven"**
    - **Tens → "Twenty", "Fifty"**
    - **Hundreds → "One Hundred", "Two Hundred"**
@@ -63,11 +63,13 @@ Here’s the secret sauce:
   
      *Firstly "Illions" is new word I introduce here, you're not gonna find elsewhere and secondly, I purposely make it exceed trillions because, let’s be honest, ₿ value might keep going up forever, right! 🚀💰*
      
-4. **Combine Words:** Next, we piece everything together into one beautiful, wordy masterpiece. Just like making a sandwich from the ingredients you have.
+4. **Combine Words:** Next, I piece everything together into one beautiful, wordy masterpiece. Just like making a sandwich from the ingredients you have.
 
 5. **Handle Special Cases:** Every good recipe has its quirks, like “teens” (10-19) which are their own special club. 🎉
 
-6. **Code It Up:** Finally, we code all this into a neat algorithm that takes a number and turns it into words!
+6. **Code It Up:** Finally, I code all this into a neat algorithm that takes a number and turns it into words!
+
+7. **Extra Sauce**: I have optional parameter called `AllowRounding`. Set it to `false` if you don't want to allow more than 2 decimal points or `true` to round it up into just 2 decimal points.
 
 ### The Summary in a Nutshell
 
@@ -81,7 +83,7 @@ Here’s the secret sauce:
 | **Handle Special Guests** | Deal with those tricky “teen” numbers like a pro party host.                                                           |
 | **Write the Code**       | Turn this fun process into code that does the magic for you!                                                            |
 
-So, while our algorithm might not win any awards for elegance, it sure gets the job done in a fun and practical way. 🏆🎉
+So, while my algorithm might not win any awards for elegance, it sure gets the job done in a fun and practical way. 🏆🎉
 
 
 ## How to Run the API
