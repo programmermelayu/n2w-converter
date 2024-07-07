@@ -1,4 +1,4 @@
-# Number to Words Converter
+# N2W-Converter: Friendly Guideline
 
 - [Number to Words Converter](#number-to-words-converter)
   - [Components Description](#components-description)
