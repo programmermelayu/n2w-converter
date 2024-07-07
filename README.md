@@ -37,7 +37,7 @@ N2W Converter is a simple .NET Web API that can convert dollar and cents in deci
 
 ## Let's Talk About Algorithm
 
-So, here’s the scoop on the algorithm we’re using. It might not be the fanciest or most mind-blowing formula you’ll ever find online (like those that promise to solve world hunger with just a few lines of code), but it’s pretty darn clever in its own right!
+So, here’s the scoop on the algorithm I'm using. It might not be the fanciest or most mind-blowing formula you’ll ever find online (like those that promise to solve world hunger with just a few lines of code), but it’s pretty solve the problem!
 
 ### Think of the Algorithm as a Digital Wizard 🧙‍♂️
 
@@ -61,7 +61,7 @@ Here’s the secret sauce:
    - **Hundreds → "One Hundred", "Two Hundred"**
    - **Illions → "Thousands", "Millions", "Billions", "Trillions", "Quadrillions", ...** 
   
-     *Firstly "Illions" is new word I introduce here, you're not gonna find elsewhere and secondly, I purposely make it exceed trillions because, let’s be honest, ₿ value might keep going up forever, right! 🚀💰*
+     *Firstly "Illions" is a new word I introduce here, you'ren't gonna find elsewhere and secondly, I purposely make it exceed trillions because, let’s be honest, ₿ value might keep going up forever, right! 🚀💰*
      
 4. **Combine Words:** Next, I piece everything together into one beautiful, wordy masterpiece. Just like making a sandwich from the ingredients you have.
 
