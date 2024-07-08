@@ -23,6 +23,10 @@
     - [Prerequisites](#prerequisites-3)
     - [Steps to Run Unit Tests](#steps-to-run-unit-tests)
       - [Steps Summary](#steps-summary-4)
+  - [**Test Plan for `Converter` Class**](#test-plan-for-converter-class)
+    - [**Introduction**](#introduction)
+    - [**Test Cases**](#test-cases)
+  - [**Test Execution**](#test-execution)
 
 ---
 ![Client Page](assets/client-page-20240708-2.png)
@@ -462,6 +466,44 @@ Ensure Docker is installed on your machine to proceed with following method.
     ```sh
     dotnet test --logger "trx;LogFileName=test_results.trx"
     ```
+---
+
+## **Test Plan for `Converter` Class**
+
+### **Introduction**
+
+This test plan describes the unit tests for the `Converter` class methods. These tests validate various functionalities of the `Converter` class that converts decimal numbers into English words representing monetary values.
+
+### **Test Cases**
+
+| **Test Case**                                      | **Purpose**                                              | **Inputs**                | **Expected Result**                                                                                                                                                  | **Notes**                                                                                                 |
+|----------------------------------------------------|----------------------------------------------------------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `Convert_OneThousandPlus_ShouldReturnExpectedResult` | Verify conversion of a number in the thousands range.    | `1234.32M`                | `"ONE THOUSAND TWO HUNDRED THIRTY-FOUR DOLLARS AND THIRTY-TWO CENTS"`                                        | Tests handling of thousands and two decimal places.                                                     |
+| `Convert_OneMillionPlus_ShouldReturnExpectedResult` | Verify conversion of a number in the millions range.     | `12345678.75M`            | `"TWELVE MILLION THREE HUNDRED FOURTY-FIVE THOUSAND SIX HUNDRED SEVENTY-EIGHT DOLLARS AND SEVENTY-FIVE CENTS"` | Tests handling of large numbers in the millions range.                                                   |
+| `Convert_NinetyTrillionPlus_ShouldReturnExpectedResult` | Verify conversion of a very large number in the trillions range. | `99999999999999.99M`    | `"NINETY-NINE TRILLION NINE HUNDRED NINETY-NINE BILLION NINE HUNDRED NINETY-NINE MILLION NINE HUNDRED NINETY-NINE THOUSAND NINE HUNDRED NINETY-NINE DOLLARS AND NINETY-NINE CENTS"` | Tests handling of extremely large numbers.                                                                |
+| `Convert_NineHundredTrillionPlus_ShouldReturnExpectedResult` | Verify conversion of an even larger number in the trillions range. | `999999999999999.99M`   | `"NINE HUNDRED NINETY-NINE TRILLION NINE HUNDRED NINETY-NINE BILLION NINE HUNDRED NINETY-NINE MILLION NINE HUNDRED NINETY-NINE THOUSAND NINE HUNDRED NINETY-NINE DOLLARS AND NINETY-NINE CENTS"` | Tests handling of the largest number scenario.                                                            |
+| `Convert_NineHundredTrillionNine_ShouldReturnExpectedResult` | Verify conversion of a number with both trillions and smaller dollar amounts. | `900000000000009.99M`   | `"NINE HUNDRED TRILLION NINE DOLLARS AND NINETY-NINE CENTS"`                                                 | Ensures correct conversion for large amounts with minor dollar and cent values.                         |
+| `Convert_OnePointNinetyNine_ShouldReturnExpectedResult` | Verify conversion of a number just above one dollar.      | `1.99M`                   | `"ONE DOLLAR AND NINETY-NINE CENTS"`                                                                          | Tests conversion for amounts with one dollar and two decimal places.                                      |
+| `Convert_One_ShouldReturnOneDollar`                | Verify conversion of the value exactly one dollar.       | `1M`                      | `"ONE DOLLAR"`                                                                                              | Ensures that the conversion for exactly one dollar is correct.                                            |
+| `Convert_OnePointZeroOne_ShouldReturnOneDollarOneCent` | Verify conversion of a value just above one dollar.      | `1.01M`                   | `"ONE DOLLAR AND ONE CENT"`                                                                                   | Checks the conversion for one dollar and one cent.                                                        |
+| `Convert_PointNinetyNine_ShouldReturnNinetyNineCents` | Verify conversion of a value just below one dollar.      | `0.99M`                   | `"NINETY-NINE CENTS"`                                                                                         | Ensures conversion for amounts under one dollar.                                                          |
+| `Convert_PointZeroOne_ShouldReturnOneCent`         | Verify conversion of a value with only one cent.         | `0.01M`                   | `"ONE CENT"`                                                                                                 | Checks conversion for amounts less than one dollar with only one cent.                                    |
+| `Convert_PointOne_ShouldReturnTenCents`           | Verify conversion of a value with ten cents.            | `0.1M`                    | `"TEN CENTS"`                                                                                               | Tests conversion for ten cents.                                                                            |
+| `Convert_PointOneFive_ShouldReturnFifteenCents`   | Verify conversion of a value with fifteen cents.        | `0.15M`                   | `"FIFTEEN CENTS"`                                                                                           | Tests conversion for fifteen cents.                                                                      |
+| `Convert_ThreeDecimalPlaces_ShouldReturnInvalidInput` | Verify that the converter throws an exception for more than two decimal places. | `1.123M`                 | Throws an `Exception` with the message `"INVALID INPUT"`                                                      | Ensures that the converter rejects more than two decimal places without `allowRounding`.                  |
+| `Convert_ThreeDecimalPlacesWithAllowRounding_ShouldReturnExpectedResult` | Verify that the converter correctly rounds values with more than two decimal places when `allowRounding` is enabled. | `1.123M`, `allowRounding: true` | `"ONE DOLLAR AND TWELVE CENTS"`                                                                            | Ensures rounding functionality works with `allowRounding` enabled.                                        |
+| `Convert_NegativeValue_ShouldReturnInvalidInput`   | Verify that the converter throws an exception for negative values. | `-1M`                    | Throws an `Exception` with the message `"INVALID INPUT"`                                                      | Ensures that the converter rejects negative values.                                                       |
+
+## **Test Execution**
+
+To run these tests, use the following command in your terminal:
+
+```sh
+dotnet test
+```
+
+This command will execute all the test cases in the `API.Tests` project.
+
 ---
 
 By following these instructions, you can set up and run the Number to Words Converter API quickly and efficiently. If you encounter any issues, please email me at nasminzain@gmail.com or programmermelayu@gmail.com whichever you prefer!
