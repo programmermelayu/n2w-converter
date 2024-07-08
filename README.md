@@ -1,24 +1,26 @@
 # N2W-Converter: Friendly Guideline
 
-- [Number to Words Converter](#number-to-words-converter)
+- [N2W-Converter: Friendly Guideline](#n2w-converter-friendly-guideline)
   - [Components Description](#components-description)
   - [Let's Talk About Algorithm](#lets-talk-about-algorithm)
     - [Think of the Algorithm as a Digital Wizard 🧙‍♂️](#think-of-the-algorithm-as-a-digital-wizard-️)
     - [Breaking Down the Number 🧩](#breaking-down-the-number-)
     - [The Summary in a Nutshell](#the-summary-in-a-nutshell)
-  - [How to Run the API](#how-to-run-the-api)
+  - [How to Deploy API with Client Using Docker-Compose](#how-to-deploy-api-with-client-using-docker-compose)
+      - [Steps Summary](#steps-summary)
+  - [How to Deploy API](#how-to-deploy-api)
     - [Prerequisites](#prerequisites)
     - [Method 1: Using Public Docker Image](#method-1-using-public-docker-image)
-      - [Steps Summary](#steps-summary)
-    - [Method 2: Using Local Docker Image](#method-2-using-local-docker-image)
       - [Steps Summary](#steps-summary-1)
+    - [Method 2: Using Local Docker Image](#method-2-using-local-docker-image)
+      - [Steps Summary](#steps-summary-2)
     - [Method 3: Running the API from VS Code](#method-3-running-the-api-from-vs-code)
     - [Prerequisites](#prerequisites-1)
-      - [Steps Summary](#steps-summary-2)
+      - [Steps Summary](#steps-summary-3)
   - [How to Run Unit Tests](#how-to-run-unit-tests)
     - [Prerequisites](#prerequisites-2)
     - [Steps to Run Unit Tests](#steps-to-run-unit-tests)
-      - [Steps Summary](#steps-summary-3)
+      - [Steps Summary](#steps-summary-4)
 
 ---
 
@@ -86,7 +88,71 @@ Here’s the secret sauce:
 So, while my algorithm might not win any awards for elegance, it sure gets the job done in a fun and practical way. 🏆🎉
 
 
-## How to Run the API
+## How to Deploy API with Client Using Docker-Compose
+
+1. **Navigate to Project Directory**
+
+    Change to the directory where the cloned repository is located:
+
+    ```sh
+    cd n2w-converter
+    ```
+
+3. **Run Docker-Compose**
+
+    Start the services defined in the `docker-compose.yml` file:
+
+    ```sh
+    docker-compose up -d
+    ```
+
+    This command will pull the necessary Docker images, create containers, and start them.
+
+4. **Verify the Deployment**
+
+    - **API:** Open your web browser and navigate to `http://localhost:3030/swagger` to access the Swagger UI for the API.
+    - **Client:** Open your web browser and navigate to `http://localhost:3000` to access the client application.
+
+5. **Modify Demo Script**
+
+    Update the port number in `n2w-converter/demo.sh` to match the API port specified in the `docker-compose.yml` file.
+
+    ```sh
+    # Line 5: local base_url=http://localhost:3030
+    ```
+
+6. **Test the API**
+
+    You can now test the API either using client page at `http://localhost:3000` or from `demo.sh` file by running following command:
+
+    ```sh
+    ./demo.sh
+    ```
+6. **Removing containers**
+
+    ```sh
+    cd n2w-converter
+    docker-compose down
+
+#### Steps Summary
+
+- **Clone the Repository:** `git clone https://github.com/programmermelayu/n2w-converter.git`
+- **Navigate to Project Directory:** `cd n2w-converter`
+- **Create `docker-compose.yml` File:** Define services for API and client
+- **Run Docker-Compose:** `docker-compose up -d`
+- **Verify the Deployment:** 
+  - **API:** Navigate to `http://localhost:3030/swagger`
+  - **Client:** Navigate to `http://localhost:3000`
+- **Modify Demo Script:** Update in `n2w-converter/demo.sh`
+    ```sh
+    # Line 5: local base_url=http://localhost:3030
+    ```
+- **Run the Demo Script:** `./demo.sh`
+- **Run `docker-compose down` to remove the containers
+
+
+
+## How to Deploy API 
 
 ### Prerequisites
 1. Ensure Docker is installed on your machine to proceed with either method.
@@ -382,4 +448,5 @@ So, while my algorithm might not win any awards for elegance, it sure gets the j
     dotnet test --logger "trx;LogFileName=test_results.trx"
     ```
 ---
+
 By following these instructions, you can set up and run the Number to Words Converter API quickly and efficiently. If you encounter any issues, please email me at nasminzain@gmail.com or programmermelayu@gmail.com whichever you prefer!
