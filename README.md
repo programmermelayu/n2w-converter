@@ -25,7 +25,7 @@
       - [Steps Summary](#steps-summary-4)
 
 ---
-![Client Page](assets/client-page-20240708.png)
+![Client Page](assets/client-page-20240708-1.png)
 
 ## Components Description
 
