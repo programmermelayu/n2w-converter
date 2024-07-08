@@ -25,6 +25,7 @@
       - [Steps Summary](#steps-summary-4)
 
 ---
+![Client Page](assets/client-page.png)
 
 ## Components Description
 
