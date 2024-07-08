@@ -26,7 +26,6 @@
   - [Test Plan](#test-plan)
     - [Introduction](#introduction)
     - [Test Cases](#test-cases)
-  - [**Test Execution**](#test-execution)
 
 ---
 ![Client Page](assets/client-page-20240708-2.png)
@@ -494,16 +493,6 @@ This test plan describes the unit tests for the `Converter` class methods. These
 | Verify that the converter throws an exception for more than two decimal places. | `1.123M`                 | Throws an `Exception` with the message `"INVALID INPUT"`                                                      | Ensures that the converter rejects more than two decimal places without `allowRounding`.                  |
 | Verify that the converter correctly rounds values with more than two decimal places when `allowRounding` is enabled. | `1.123M`, `allowRounding: true` | `"ONE DOLLAR AND TWELVE CENTS"`                                                                            | Ensures rounding functionality works with `allowRounding` enabled.                                        |
 | Verify that the converter throws an exception for negative values. | `-1M`                    | Throws an `Exception` with the message `"INVALID INPUT"`                                                      | Ensures that the converter rejects negative values.                                                       |
-
-## **Test Execution**
-
-To run these tests, use the following command in your terminal:
-
-```sh
-dotnet test
-```
-
-This command will execute all the test cases in the `API.Tests` project.
 
 ---
 
