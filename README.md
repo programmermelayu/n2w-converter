@@ -6,19 +6,21 @@
     - [Think of the Algorithm as a Digital Wizard 🧙‍♂️](#think-of-the-algorithm-as-a-digital-wizard-️)
     - [Breaking Down the Number 🧩](#breaking-down-the-number-)
     - [The Summary in a Nutshell](#the-summary-in-a-nutshell)
-  - [How to Deploy API with Client Using Docker-Compose](#how-to-deploy-api-with-client-using-docker-compose)
-      - [Steps Summary](#steps-summary)
-  - [How to Deploy API](#how-to-deploy-api)
+  - [How to Deploy API with Client](#how-to-deploy-api-with-client)
     - [Prerequisites](#prerequisites)
+    - [Using `docker-compose`](#using-docker-compose)
+      - [Steps Summary](#steps-summary)
+  - [How to Deploy API only](#how-to-deploy-api-only)
+    - [Prerequisites](#prerequisites-1)
     - [Method 1: Using Public Docker Image](#method-1-using-public-docker-image)
       - [Steps Summary](#steps-summary-1)
     - [Method 2: Using Local Docker Image](#method-2-using-local-docker-image)
       - [Steps Summary](#steps-summary-2)
-    - [Method 3: Running the API from VS Code](#method-3-running-the-api-from-vs-code)
-    - [Prerequisites](#prerequisites-1)
+    - [Method 3: Running in VS Code](#method-3-running-in-vs-code)
+    - [Prerequisites](#prerequisites-2)
       - [Steps Summary](#steps-summary-3)
   - [How to Run Unit Tests](#how-to-run-unit-tests)
-    - [Prerequisites](#prerequisites-2)
+    - [Prerequisites](#prerequisites-3)
     - [Steps to Run Unit Tests](#steps-to-run-unit-tests)
       - [Steps Summary](#steps-summary-4)
 
@@ -30,7 +32,8 @@ N2W Converter is a simple .NET Web API that can convert dollar and cents in deci
 
 | **Component** | **Description** |
 |:-------------|:----------------|
-| **API**       | Web API project that contains endpoints that accept decimal values, convert them to words, and respond with the results. You can test this API using either `SwaggerUI` or the `demo.sh` script. |
+| **API**       | Web API project that contains endpoints that accept decimal values, convert them to words, and respond with the results. You can test this API using given `client`, `SwaggerUI` or the `demo.sh` script. |
+| **client**   | Client page developed using React, easy enough to get you started. |
 | **API.Tests** | Unit tests for the `Convert` function to ensure all scenarios are handled. While not guaranteed to be bug-free, it aims to be nearly so. |
 | **demo.sh**   | Interactive shell script to test the API. You can edit the base URL and port number here, and set `AllowRounding` to `True` or `False` (default is `False`). |
 
@@ -88,9 +91,20 @@ Here’s the secret sauce:
 So, while my algorithm might not win any awards for elegance, it sure gets the job done in a fun and practical way. 🏆🎉
 
 
-## How to Deploy API with Client Using Docker-Compose
+## How to Deploy API with Client
 
-1. **Navigate to Project Directory**
+### Prerequisites
+Ensure Docker is installed on your machine to proceed with following method.
+
+### Using `docker-compose`
+
+1. **Clone the Repository**
+
+    ```sh
+    git clone https://github.com/programmermelayu/n2w-converter.git
+    ```
+
+2. **Navigate to Project Directory**
 
     Change to the directory where the cloned repository is located:
 
@@ -106,7 +120,7 @@ So, while my algorithm might not win any awards for elegance, it sure gets the j
     docker-compose up -d
     ```
 
-    This command will pull the necessary Docker images, create containers, and start them.
+    This command will build the necessary Docker image for `API` and `client`, create containers, and start them.
 
 4. **Verify the Deployment**
 
@@ -128,7 +142,7 @@ So, while my algorithm might not win any awards for elegance, it sure gets the j
     ```sh
     ./demo.sh
     ```
-6. **Removing containers**
+7. **Removing containers**
 
     ```sh
     cd n2w-converter
@@ -152,7 +166,7 @@ So, while my algorithm might not win any awards for elegance, it sure gets the j
 
 
 
-## How to Deploy API 
+## How to Deploy API only
 
 ### Prerequisites
 1. Ensure Docker is installed on your machine to proceed with either method.
@@ -251,7 +265,7 @@ So, while my algorithm might not win any awards for elegance, it sure gets the j
 
 ---
 
-### Method 3: Running the API from VS Code
+### Method 3: Running in VS Code
 
 ### Prerequisites
 - Ensure you have the [.NET SDK](https://dotnet.microsoft.com/download) installed on your machine.
