@@ -33,7 +33,7 @@ N2W Converter is a simple .NET Web API that can convert dollar and cents in deci
 | **Component** | **Description** |
 |:-------------|:----------------|
 | **API**       | Web API project that contains endpoints that accept decimal values, convert them to words, and respond with the results. You can test this API using given `client`, `SwaggerUI` or the `demo.sh` script. |
-| **client**   | Client page developed using React, easy enough to get you started. |
+| **client**   | Very simple client app developed using React, easy enough to get you started. |
 | **API.Tests** | Unit tests for the `Convert` function to ensure all scenarios are handled. While not guaranteed to be bug-free, it aims to be nearly so. |
 | **demo.sh**   | Interactive shell script to test the API. You can edit the base URL and port number here, and set `AllowRounding` to `True` or `False` (default is `False`). |
 
