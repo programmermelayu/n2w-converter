@@ -38,7 +38,7 @@ public class Converter : IConverter
     {
         get
         {
-            return ["zero", "ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eightty", "ninety"];
+            return ["zero", "ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"];
         }
     }
     private static List<string> Illions
