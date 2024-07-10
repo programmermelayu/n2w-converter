@@ -1,0 +1,24 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '8.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+- script: |
+    docker-compose -f docker-compose.yaml build
+    docker-compose -f docker-compose.yaml push
+  displayName: 'Build and Push Docker Images'
+
+- task: AzureWebAppContainer@1
+  inputs:
+    azureSubscription: '18May2018PayAsYouGo'
+    appName: 'n2w-converter'
+    imageName: 'nasminzain/n2w-converter-api:latest nasminzain/n2w-converter-api:latest'
+    containerCommand: 'docker-compose up'
