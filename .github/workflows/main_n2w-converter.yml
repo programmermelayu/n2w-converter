@@ -26,12 +26,21 @@ jobs:
         username: ${{ secrets.AzureAppService_ContainerUsername_7e8f2a3986c1445fad7f9a0635ad74c4 }}
         password: ${{ secrets.AzureAppService_ContainerPassword_57f72fa154754650b7feea014e682be2 }}
 
-    - name: Build and push container image to registry
-      uses: docker/build-push-action@v3
-      with:
-        push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_7e8f2a3986c1445fad7f9a0635ad74c4 }}/n2w-converter-api :${{ github.sha }}
-        file: ./Dockerfile
+    - name: Pull and Run Docker Compose
+      run: |
+        echo "version: '3.8'" > docker-compose.yml
+        echo "services:" >> docker-compose.yaml
+        echo "  api:" >> docker-compose.yaml
+        echo "    image: nasminzain/n2w-converter-api:latest" >> docker-compose.yml
+        echo "    ports:" >> docker-compose.yaml
+        echo "      - '3030:8080'" >> docker-compose.yaml
+        echo "  client:" >> docker-compose.yml
+        echo "    image: nasminzain/n2w-converter-client:latest" >> docker-compose.yaml
+        echo "    ports:" >> docker-compose.yaml
+        echo "      - '3000:3000'" >> docker-compose.yaml
+        echo "    environment:
+        echo "      - REACT_APP_BASE_URL=http://localhost:3030
+        docker-compose up -d
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,4 +57,6 @@ jobs:
         app-name: 'n2w-converter'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b77292692d0d4078aa3ce969836d32e7 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_7e8f2a3986c1445fad7f9a0635ad74c4 }}/n2w-converter-api :${{ github.sha }}'
+        images: |
+          nasminzain/n2w-converter-api:latest
+          nasminzain/n2w-converter-client:latest
