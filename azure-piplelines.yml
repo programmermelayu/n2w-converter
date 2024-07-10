@@ -20,5 +20,5 @@ steps:
   inputs:
     azureSubscription: '18May2018PayAsYouGo'
     appName: 'n2w-converter'
-    imageName: 'nasminzain/n2w-converter-api:latest nasminzain/n2w-converter-api:latest'
+    imageName: 'nasminzain/n2w-converter-api:latest nasminzain/n2w-converter-client:latest'
     containerCommand: 'docker-compose up'
