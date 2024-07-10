@@ -39,6 +39,7 @@ jobs:
     environment:
       name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      REACT_APP_BASE_URL: https://n2w-converter.azurewebsites.net/
 
     steps:
     - name: Deploy to Azure Web App
