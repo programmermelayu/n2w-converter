@@ -90,6 +90,7 @@ const FormComponent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const baseURL = "https://n2w-converter.azurewebsites.net"; //process.env.REACT_APP_BASE_URL;
+    console.log('baseURL:'  + baseURL);
 
     try {
       const response = await axios.get(`${baseURL}/Converter/value`, {
