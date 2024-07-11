@@ -89,7 +89,7 @@ const FormComponent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const baseURL = process.env.REACT_APP_BASE_URL;
+    const baseURL = "https://n2w-converter.azurewebsites.net"; //process.env.REACT_APP_BASE_URL;
 
     try {
       const response = await axios.get(`${baseURL}/Converter/value`, {
@@ -131,25 +131,25 @@ const FormComponent = () => {
     fetchData();
   }, [inputValue, allowRounding, error]); // Trigger the effect when inputValue, allowRounding, or error changes
 
-
   const handleInputChange = (e) => {
     const value = e.target.value;
     let errorMsg = "";
     if (isNaN(value)) {
       errorMsg = "Please enter a valid decimal number";
       setResponseText("");
-    } 
+    }
 
     // Check if the value contains a decimal point and handle rounding
     if (allowRounding === false) {
       if (value.includes(".")) {
         const decimalPart = value.split(".")[1]; // Get the part after the decimal point
         if (decimalPart && decimalPart.length > 2) {
-          errorMsg = "Please check 'Allow Rounding' to handle more decimal points";   
-          setResponseText("");  
-        } 
+          errorMsg =
+            "Please check 'Allow Rounding' to handle more decimal points";
+          setResponseText("");
+        }
+      }
     }
-  }
 
     setError(errorMsg);
 
@@ -196,21 +196,25 @@ const FormComponent = () => {
               </div>
               {error && <div className="invalid-tooltip d-block">{error}</div>}
             </div>
-            <button hidden disabled={!!error} type="submit" className="btn btn-success">
+            <button
+              hidden
+              disabled={!!error}
+              type="submit"
+              className="btn btn-success"
+            >
               Convert
             </button>
           </form>
           {responseText && (
-              <div className="alert alert-success response-text" role="alert">
-                <strong>{responseText}</strong>
-              </div>
-            )}
-             {error && (
-              <div className="alert alert-danger response-text" role="alert">
-                {error}
-              </div>
-            )}
-          
+            <div className="alert alert-success response-text" role="alert">
+              <strong>{responseText}</strong>
+            </div>
+          )}
+          {error && (
+            <div className="alert alert-danger response-text" role="alert">
+              {error}
+            </div>
+          )}
         </div>
       </div>
     </div>
