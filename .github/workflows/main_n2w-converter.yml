@@ -29,11 +29,11 @@ jobs:
     - name: Pull and Run Docker Compose
       run: |
         echo "version: '3.8'" > docker-compose.yml
-        echo "services:" >> docker-compose.yaml
-        echo "  api:" >> docker-compose.yaml
+        echo "services:" >> docker-compose.yml
+        echo "  api:" >> docker-compose.yml
         echo "    image: nasminzain/n2w-converter-api:latest" >> docker-compose.yml
-        echo "    ports:" >> docker-compose.yaml
-        echo "      - '3030:8080'" >> docker-compose.yaml
+        echo "    ports:" >> docker-compose.yml
+        echo "      - '3030:8080'" >> docker-compose.yml
         docker-compose up -d
 
   deploy:
@@ -49,8 +49,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'n2w-converter'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b77292692d0d4078aa3ce969836d32e7 }}
         images: |
           nasminzain/n2w-converter-api:latest
-          nasminzain/n2w-converter-client:latest
