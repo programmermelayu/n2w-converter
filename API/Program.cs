@@ -12,8 +12,17 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
-    .WithOrigins("http://localhost:3000","https://localhost:3000" ));
+
+// Read the ALLOWED_IPS environment variable
+var allowedClientIPs = Environment.GetEnvironmentVariable("ALLOWED_CLIENT_IPS")?.Split(',');
+
+if (allowedClientIPs != null && allowedClientIPs.Length > 0)
+{
+    app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins(allowedClientIPs));
+}
+
+// app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
+//     .WithOrigins("http://localhost:3000","https://localhost:3000" ));
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
