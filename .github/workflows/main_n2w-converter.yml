@@ -34,12 +34,6 @@ jobs:
         echo "    image: nasminzain/n2w-converter-api:latest" >> docker-compose.yml
         echo "    ports:" >> docker-compose.yaml
         echo "      - '3030:8080'" >> docker-compose.yaml
-        echo "  client:" >> docker-compose.yml
-        echo "    image: nasminzain/n2w-converter-client:latest" >> docker-compose.yaml
-        echo "    ports:" >> docker-compose.yaml
-        echo "      - '3000:3000'" >> docker-compose.yaml
-        echo "    environment:
-        echo "      - REACT_APP_BASE_URL=http://localhost:3030
         docker-compose up -d
 
   deploy:

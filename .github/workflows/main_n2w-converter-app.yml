@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_6ba1f32c5df045458ab55f6fe2e3b480 }}/nasminzain/n2w-converter-client:latest
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_6ba1f32c5df045458ab55f6fe2e3b480 }}/n2w-converter-client:latest
         file: ./client/Dockerfile
         context: ./client
 
@@ -49,4 +49,4 @@ jobs:
         app-name: 'n2w-converter-app'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_65190f04e41f4ba1b3a54948466e740c }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_6ba1f32c5df045458ab55f6fe2e3b480 }}/nasminzain/n2w-converter-client:latest'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_6ba1f32c5df045458ab55f6fe2e3b480 }}/n2w-converter-client:latest'
