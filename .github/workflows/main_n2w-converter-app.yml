@@ -31,7 +31,8 @@ jobs:
       with:
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_6ba1f32c5df045458ab55f6fe2e3b480 }}/nasminzain/n2w-converter-client:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./API/Dockerfile
+        context: ./API
 
   deploy:
     runs-on: ubuntu-latest
